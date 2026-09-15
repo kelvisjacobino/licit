@@ -38,11 +38,11 @@ export const FornecedoresView: React.FC<FornecedoresViewProps> = ({
     if (busca.trim()) {
       const q = busca.toLowerCase();
       return (
-        f.nomeFantasia.toLowerCase().includes(q) ||
-        f.razaoSocial.toLowerCase().includes(q) ||
-        f.cnpj.includes(q) ||
-        f.contatoNome.toLowerCase().includes(q) ||
-        f.cidadeUf.toLowerCase().includes(q)
+        (f.nomeFantasia || '').toLowerCase().includes(q) ||
+        (f.razaoSocial || '').toLowerCase().includes(q) ||
+        (f.cnpj || '').includes(q) ||
+        (f.contatoNome || f.contato || '').toLowerCase().includes(q) ||
+        (f.cidadeUf || '').toLowerCase().includes(q)
       );
     }
     return true;

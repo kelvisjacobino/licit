@@ -43,10 +43,10 @@ export const DocumentosView: React.FC = () => {
     if (busca.trim()) {
       const q = busca.toLowerCase();
       return (
-        doc.nome.toLowerCase().includes(q) ||
-        doc.orgaoEmissor.toLowerCase().includes(q) ||
-        doc.numero.toLowerCase().includes(q) ||
-        doc.codigoAutenticidade.toLowerCase().includes(q)
+        (doc.nome || '').toLowerCase().includes(q) ||
+        (doc.orgaoEmissor || '').toLowerCase().includes(q) ||
+        (doc.numero || '').toLowerCase().includes(q) ||
+        (doc.codigoAutenticidade || '').toLowerCase().includes(q)
       );
     }
     return true;

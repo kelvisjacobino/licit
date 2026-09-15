@@ -69,10 +69,10 @@ export const LicitacoesView: React.FC<LicitacoesViewProps> = ({
     // Busca textual
     if (busca.trim()) {
       const q = busca.toLowerCase();
-      const matchNumero = lic.numero.toLowerCase().includes(q);
-      const matchOrgao = lic.orgao.toLowerCase().includes(q);
-      const matchObjeto = lic.objeto.toLowerCase().includes(q);
-      const matchPortal = lic.portal.toLowerCase().includes(q);
+      const matchNumero = (lic.numero || '').toLowerCase().includes(q);
+      const matchOrgao = (lic.orgao || '').toLowerCase().includes(q);
+      const matchObjeto = (lic.objeto || '').toLowerCase().includes(q);
+      const matchPortal = (lic.portal || '').toLowerCase().includes(q);
       return matchNumero || matchOrgao || matchObjeto || matchPortal;
     }
 

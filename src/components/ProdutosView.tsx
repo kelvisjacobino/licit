@@ -27,16 +27,16 @@ export const ProdutosView: React.FC = () => {
   const [produtoEditando, setProdutoEditando] = useState<Produto | null>(null);
 
   const produtosFiltrados = produtos.filter((p) => {
-    if (tipoFiltro !== 'todos' && p.tipo !== tipoFiltro) return false;
+    if (tipoFiltro !== 'todos' && p.tipo && p.tipo.toLowerCase() !== tipoFiltro.toLowerCase()) return false;
     if (categoriaFiltro !== 'todas' && p.categoria !== categoriaFiltro) return false;
 
     if (busca.trim()) {
       const q = busca.toLowerCase();
       return (
-        p.nome.toLowerCase().includes(q) ||
-        p.sku.toLowerCase().includes(q) ||
-        p.marca.toLowerCase().includes(q) ||
-        p.descricao.toLowerCase().includes(q)
+        (p.nome || '').toLowerCase().includes(q) ||
+        (p.sku || p.codigo || '').toLowerCase().includes(q) ||
+        (p.marca || '').toLowerCase().includes(q) ||
+        (p.descricao || p.observacoes || '').toLowerCase().includes(q)
       );
     }
     return true;
@@ -151,7 +151,7 @@ export const ProdutosView: React.FC = () => {
                 <div className="flex items-start justify-between">
                   <div>
                     <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-900">
-                      {prod.categoria} • {prod.tipo.toUpperCase()}
+                      {prod.categoria} • {(prod.tipo || 'Produto').toUpperCase()}
                     </span>
                     <h3 className="font-bold text-sm text-slate-900 dark:text-white mt-1.5">
                       {prod.nome}
@@ -184,14 +184,14 @@ export const ProdutosView: React.FC = () => {
                 </div>
 
                 <p className="text-xs text-slate-500 line-clamp-2 leading-relaxed">
-                  {prod.descricao}
+                  {prod.descricao || prod.observacoes || 'Item cadastrado no catálogo corporativo.'}
                 </p>
 
                 <div className="text-[11px] text-slate-400 space-y-1">
                   <div className="flex justify-between">
                     <span>SKU / Fabricante:</span>
                     <span className="font-mono text-slate-700 dark:text-slate-300">
-                      {prod.sku} ({prod.marca})
+                      {prod.sku || prod.codigo || 'S/N'} ({prod.marca || 'Padrão'})
                     </span>
                   </div>
                   <div className="flex justify-between">

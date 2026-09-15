@@ -38,9 +38,9 @@ export const CotacoesView: React.FC = () => {
       const prod = produtos.find((p) => p.id === c.produtoId);
 
       return (
-        c.numero.toLowerCase().includes(q) ||
-        forn?.nomeFantasia.toLowerCase().includes(q) ||
-        prod?.nome.toLowerCase().includes(q)
+        (c.numero || '').toLowerCase().includes(q) ||
+        (forn?.nomeFantasia || '').toLowerCase().includes(q) ||
+        (prod?.nome || '').toLowerCase().includes(q)
       );
     }
     return true;

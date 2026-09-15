@@ -2,5 +2,7 @@
   "name": "DavenzaTec Licitações",
   "description": "Sistema de Gestão de Licitações, Fornecedores, Cofre de Documentos e Formação de Preços para a DavenzaTec Tecnologia Ltda.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

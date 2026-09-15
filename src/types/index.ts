@@ -69,19 +69,23 @@ export type ProdutoTipo = 'Produto' | 'Serviço';
 
 export interface Produto {
   id: string;
-  codigo: string; // SKU / Part Number
+  codigo?: string; // SKU / Part Number
+  sku?: string;
   nome: string;
+  descricao?: string;
   categoria: ProdutoCategoria;
   tipo?: ProdutoTipo;
   marca: string;
   fornecedorPrincipalId: string;
-  unidade: 'Licença' | 'Mês' | 'Unidade' | 'Hora' | 'Assinatura Anual' | 'Lote' | 'Turma' | 'Diária' | 'Serviço';
+  unidade: 'Licença' | 'Mês' | 'Unidade' | 'Hora' | 'Assinatura Anual' | 'Lote' | 'Turma' | 'Diária' | 'Serviço' | string;
   custoAtual: number;
-  custoMedio: number;
+  custoMedio?: number;
   precoSugerido: number;
-  margemPadrao: number; // %
+  margemPadrao?: number; // %
+  margemHistoricaPct?: number;
   status: 'Ativo' | 'Inativo' | 'ativo' | 'inativo';
   observacoes?: string;
+  observacoesTecnicas?: string;
 }
 
 export type CotacaoStatus = 'vigente' | 'vencida' | 'aprovada' | 'rejeitada' | 'pendente';
