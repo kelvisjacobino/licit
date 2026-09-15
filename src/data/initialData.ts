@@ -130,6 +130,8 @@ export const PRODUTOS_INICIAIS: Produto[] = [
   {
     id: 'prod-1',
     codigo: 'MS-365-BUS-STD',
+    sku: 'MS-365-BUS-STD',
+    tipo: 'produto',
     nome: 'Microsoft 365 Business Standard',
     categoria: 'Software',
     marca: 'Microsoft',
@@ -145,6 +147,8 @@ export const PRODUTOS_INICIAIS: Produto[] = [
   {
     id: 'prod-2',
     codigo: 'ESET-EP-ADV-100',
+    sku: 'ESET-EP-ADV-100',
+    tipo: 'produto',
     nome: 'ESET Endpoint Protection Advanced',
     categoria: 'Software',
     marca: 'ESET',
@@ -160,6 +164,8 @@ export const PRODUTOS_INICIAIS: Produto[] = [
   {
     id: 'prod-3',
     codigo: 'KASP-EP-SEL-1Y',
+    sku: 'KASP-EP-SEL-1Y',
+    tipo: 'produto',
     nome: 'Kaspersky Endpoint Security Select',
     categoria: 'Software',
     marca: 'Kaspersky',
@@ -175,6 +181,8 @@ export const PRODUTOS_INICIAIS: Produto[] = [
   {
     id: 'prod-4',
     codigo: 'ADOBE-ACRO-PRO',
+    sku: 'ADOBE-ACRO-PRO',
+    tipo: 'produto',
     nome: 'Adobe Acrobat Pro DC Corporate',
     categoria: 'Software',
     marca: 'Adobe',
@@ -190,6 +198,8 @@ export const PRODUTOS_INICIAIS: Produto[] = [
   {
     id: 'prod-5',
     codigo: 'AUTOD-ACAD-COMM',
+    sku: 'AUTOD-ACAD-COMM',
+    tipo: 'produto',
     nome: 'Autodesk AutoCAD Commercial Anual',
     categoria: 'Software',
     marca: 'Autodesk',
@@ -205,6 +215,8 @@ export const PRODUTOS_INICIAIS: Produto[] = [
   {
     id: 'prod-6',
     codigo: 'NOTE-DELL-LAT5440',
+    sku: 'NOTE-DELL-LAT5440',
+    tipo: 'produto',
     nome: 'Notebook Corporativo Dell Latitude 5440 Core i7 16GB SSD 512GB',
     categoria: 'Hardware',
     marca: 'Dell',
@@ -220,6 +232,8 @@ export const PRODUTOS_INICIAIS: Produto[] = [
   {
     id: 'prod-7',
     codigo: 'SRV-DELL-R450',
+    sku: 'SRV-DELL-R450',
+    tipo: 'produto',
     nome: 'Servidor Rack 1U Dell PowerEdge R450 Xeon Silver 32GB 2TB SAS',
     categoria: 'Hardware',
     marca: 'Dell',
@@ -235,6 +249,8 @@ export const PRODUTOS_INICIAIS: Produto[] = [
   {
     id: 'prod-8',
     codigo: 'SRV-SUP-NOC247',
+    sku: 'SRV-SUP-NOC247',
+    tipo: 'servico',
     nome: 'Suporte Técnico e Monitoramento NOC 24x7',
     categoria: 'Serviço',
     marca: 'DavenzaTec',
@@ -250,6 +266,8 @@ export const PRODUTOS_INICIAIS: Produto[] = [
   {
     id: 'prod-9',
     codigo: 'CONS-CLOUD-SPEC',
+    sku: 'CONS-CLOUD-SPEC',
+    tipo: 'servico',
     nome: 'Consultoria Especializada em Arquitetura Cloud & Migração',
     categoria: 'Serviço',
     marca: 'DavenzaTec',
@@ -265,6 +283,8 @@ export const PRODUTOS_INICIAIS: Produto[] = [
   {
     id: 'prod-10',
     codigo: 'DEV-SOFT-CUST',
+    sku: 'DEV-SOFT-CUST',
+    tipo: 'servico',
     nome: 'Desenvolvimento e Customização de Sistemas Web / API',
     categoria: 'Serviço',
     marca: 'DavenzaTec',
@@ -280,6 +300,8 @@ export const PRODUTOS_INICIAIS: Produto[] = [
   {
     id: 'prod-11',
     codigo: 'TREIN-SEC-OPS',
+    sku: 'TREIN-SEC-OPS',
+    tipo: 'servico',
     nome: 'Treinamento em Conscientização de Cibersegurança & LGPD',
     categoria: 'Serviço',
     marca: 'DavenzaTec',

@@ -65,7 +65,7 @@ export interface Fornecedor {
 }
 
 export type ProdutoCategoria = 'Software' | 'Hardware' | 'Serviço' | 'Infraestrutura';
-export type ProdutoTipo = 'Produto' | 'Serviço';
+export type ProdutoTipo = 'Produto' | 'Serviço' | 'produto' | 'servico';
 
 export interface Produto {
   id: string;

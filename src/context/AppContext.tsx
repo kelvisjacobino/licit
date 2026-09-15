@@ -90,7 +90,21 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
 
   const [produtos, setProdutos] = useState<Produto[]>(() => {
     const saved = localStorage.getItem(STORAGE_PREFIX + 'produtos');
-    return saved ? JSON.parse(saved) : PRODUTOS_INICIAIS;
+    const items: Produto[] = saved ? JSON.parse(saved) : PRODUTOS_INICIAIS;
+    return items.map((p) => {
+      const cat = (p.categoria || '').toLowerCase();
+      const isServ = cat.includes('serv') || cat.includes('consult');
+      const tipoNormalizado = p.tipo
+        ? (p.tipo.toLowerCase().includes('serv') ? 'servico' : 'produto')
+        : (isServ ? 'servico' : 'produto');
+
+      return {
+        ...p,
+        tipo: tipoNormalizado,
+        sku: p.sku || p.codigo || 'S/N',
+        codigo: p.codigo || p.sku || 'S/N',
+      };
+    });
   });
 
   const [fornecedores, setFornecedores] = useState<Fornecedor[]>(() => {
